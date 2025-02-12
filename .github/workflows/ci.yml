@@ -17,4 +17,4 @@ jobs:
       - name: Lint
         run: bun lint
       - name: Format
-        run: bun format
+        run: bun format:check
