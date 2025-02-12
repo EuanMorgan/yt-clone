@@ -9,8 +9,14 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
-    "format": "bunx prettier --check .",
-    "format:fix": "bunx prettier --write ."
+    "check": "next lint && tsc --noEmit && prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "preview": "next build && next start"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.11.2",
@@ -66,12 +72,18 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/eslint": "^9.6.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.6",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint": "^9.20.1",
+    "eslint-config-next": "^15.1.7",
+    "eslint-plugin-drizzle": "^0.2.3",
     "postcss": "^8",
+    "prettier": "^3.5.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
