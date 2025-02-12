@@ -1,15 +1,8 @@
 "use client";
 
+import { useAuth, useClerk } from "@clerk/nextjs";
+import { HistoryIcon, ListVideoIcon, ThumbsUpIcon } from "lucide-react";
 import Link from "next/link";
-import {
-  HomeIcon,
-  PlaySquare,
-  FlameIcon,
-  HistoryIcon,
-  HeartIcon,
-  ThumbsUpIcon,
-  ListVideoIcon,
-} from "lucide-react";
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -18,8 +11,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "~/components/ui/sidebar";
-import { useAuth } from "@clerk/nextjs";
-import { useClerk } from "@clerk/nextjs";
 
 const items = [
   {
