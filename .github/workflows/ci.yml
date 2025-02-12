@@ -1,4 +1,4 @@
-name: CI
+name: Lint, Format, Typecheck
 on: [push]
 jobs:
   build:
@@ -10,9 +10,8 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Install Dependencies
         run: bun install
-      - name: Copy .env.example files
-        shell: bash
-        run: find . -type f -name ".env.example" -exec sh -c 'cp "$1" "${1%.*}"' _ {} \;
+      - name: Set up environment
+        run: cp .env.example .env
       - name: Typecheck
         run: bun typecheck
       - name: Lint
