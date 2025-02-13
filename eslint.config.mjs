@@ -1,6 +1,37 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import { dirname } from "path";
+import tseslint from "typescript-eslint";
 import { fileURLToPath } from "url";
+
+/**
+ * All packages that leverage t3-env should use this rule
+ */
+export const restrictEnvAccess = tseslint.config(
+  { ignores: ["**/env.ts"] },
+  {
+    files: ["**/*.js", "**/*.ts", "**/*.tsx"],
+    rules: {
+      "no-restricted-properties": [
+        "error",
+        {
+          object: "process",
+          property: "env",
+          message:
+            "Use `import { env } from '~/env'` instead to ensure validated types.",
+        },
+      ],
+      "no-restricted-imports": [
+        "error",
+        {
+          name: "process",
+          importNames: ["env"],
+          message:
+            "Use `import { env } from '~/env'` instead to ensure validated types.",
+        },
+      ],
+    },
+  },
+);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -64,6 +95,7 @@ const eslintConfig = [
       ],
     },
   },
+  ...restrictEnvAccess,
 ];
 
 export default eslintConfig;
