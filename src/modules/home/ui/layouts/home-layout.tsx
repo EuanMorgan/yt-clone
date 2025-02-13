@@ -11,9 +11,9 @@ export function HomeLayout({ children }: HomeLayoutProps) {
     <SidebarProvider>
       <div className="w-full">
         <HomeNavbar />
-        <div className="flex min-h-screen pt-[4rem]">
+        <div className="flex min-h-screen">
           <HomeSidebar />
-          <main className="flex-1 overflow-y-auto">{children}</main>
+          <main className="flex-1 overflow-y-auto pt-[4rem]">{children}</main>
         </div>
       </div>
     </SidebarProvider>
