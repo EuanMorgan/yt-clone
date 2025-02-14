@@ -15,7 +15,6 @@
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.preferences.autoImportFileExcludePatterns": [
     "next/router.d.ts",
     "next/dist/client/router.d.ts",
@@ -28,5 +27,8 @@
   "workbench.editor.customLabels.patterns": {
     "**/app/**/page.tsx": "${dirname(1)}/${dirname}",
     "**/app/**/layout.tsx": "${dirname}/layout.${extname}"
-  }
+  },
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
