@@ -94,7 +94,7 @@
     "@tailwindcss/postcss": "^4.0.0",
     "@types/eslint": "^9.6.1",
     "@types/eslint__js": "^8.42.3",
-    "@types/node": "^20",
+    "@types/node": "^22.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "drizzle-kit": "^0.30.4",
